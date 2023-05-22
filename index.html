@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+<body>
+    <h1>Gerenciamento de Protocolos</h1>
+    <button onclick="openModal()">Novo chamado</button>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <form id="protocoloForm">
+                <strong class="title">Novo protocolo</strong>
+                    <label class="text" for="nome">Nome:</label>
+                    <input class="field" type="text" id="nome" required>
+                    <label class="text" for="data">Data:</label>
+                    <input class="field" type="date" id="data" required>
+                    <label class="text" for="localizacao">Localização:</label>
+                    <input class="field" type="text" id="localizacao" required>
+                    <label class="text" for="patrimonio">Número do Patrimônio:</label>
+                    <input class="field" type="text" id="patrimonio" required>
+                    <label class="text" for="chamado">Número do Chamado:</label>
+                    <input class="field" type="text" id="chamado" required>
+                <button class="adicionar" type="submit">Criar Protocolo</button>
+            </form>
+        </div>
+    </div>
+    
+    <h2>Protocolos</h2>
+    <div id="protocolosList"></div>
+
+    <div id="edit-modal" class="edit-modal">
+        <div class="edit-modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <div id="editFormContainer">
+                <strong>Editar Protocolo</strong>
+                <form id="editForm">
+                    <label class="text" for="editNome">Nome:</label>
+                    <input class="field" type="text" id="editNome" required>
+                    <label class="text" for="editData">Data:</label>
+                    <input class="field" type="date" id="editData" required>
+                    <label class="text" for="editLocalizacao">Localização:</label>
+                    <input class="field" type="text" id="editLocalizacao" required>
+                    <label class="text" for="editPatrimonio">Número do Patrimônio:</label>
+                    <input class="field" type="text" id="editPatrimonio" required>
+                    <input type="hidden" id="editChamado">
+                    <button class="adicionar" type="submit">Salvar alterações</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

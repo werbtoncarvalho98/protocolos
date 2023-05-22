@@ -1,0 +1,90 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.modal,
+.edit-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content,
+.edit-modal-content {
+    background-color: #f9f9f9;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text {
+    position: relative;
+    display: block;
+    margin: 5px 0;
+}
+
+.field {
+    background-color: #fff;
+    width: -webkit-fill-available;
+    padding: 5px;
+    border: unset;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+input[type="file"]::file-selector-button,
+.adicionar,
+.editar {
+    font-family: inherit;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover,
+.adicionar:hover,
+.editar:hover {
+    background-color: #0069d9;
+}
+
+.adicionar,
+.editar {
+    width: 100%;
+    margin-top: 31px;
+}
+
+.close {
+    position: absolute;
+    color: #aaa;
+    line-height: 0;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    top: 20px;
+    right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

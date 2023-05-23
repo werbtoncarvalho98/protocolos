@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 <body>
-    <h1>Gerenciamento de Protocolos</h1>
+    <h1>Gerenciamento de Protocolos de Retirada</h1>
     <button onclick="openModal()">Novo Protocolo</button>
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -16,13 +16,13 @@
             <form id="protocoloForm">
                 <label class="text" for="nome">Nome:</label>
                 <input class="field" type="text" id="nome" required>
-                <label class="text" for="data">Data:</label>
+                <label class="text" for="data">Data de Retirada:</label>
                 <input class="field" type="date" id="data" required>
                 <label class="text" for="localizacao">Localização:</label>
                 <input class="field" type="text" id="localizacao" required>
-                <label class="text" for="patrimonio">Número do Patrimônio:</label>
+                <label class="text" for="patrimonio">N.º do Patrimônio:</label>
                 <input class="field" type="text" id="patrimonio" required>
-                <label class="text" for="chamado">Número do Chamado:</label>
+                <label class="text" for="chamado">N.º do Chamado:</label>
                 <input class="field" type="text" id="chamado" required>
                 <label class="text" for="comprovante">Comprovante:</label>
                 <input type="file" id="comprovante" disabled>
@@ -31,9 +31,6 @@
             <button form="protocoloForm" class="adicionar" type="submit">Criar Protocolo</button>
         </div>
     </div>
-    
-    <h2>Protocolos</h2>
-    <div id="protocolosList"></div>
 
     <div id="edit-modal" class="edit-modal">
         <div class="edit-modal-content">
@@ -47,9 +44,9 @@
                     <input class="field" type="date" id="editData" required>
                     <label class="text" for="editLocalizacao">Localização:</label>
                     <input class="field" type="text" id="editLocalizacao" required>
-                    <label class="text" for="editPatrimonio">Número do Patrimônio:</label>
+                    <label class="text" for="editPatrimonio">N.º do Patrimônio:</label>
                     <input class="field" type="text" id="editPatrimonio" required>
-                    <label class="text" for="chamado">Número do Chamado:</label>
+                    <label class="text" for="chamado">N.º do Chamado:</label>
                     <input class="field" type="text" id="chamado" required disabled>
                     <label class="text" for="comprovante">Comprovante:</label>
                     <input type="file" id="comprovante" disabled>
@@ -60,6 +57,21 @@
             <button form="editForm" class="adicionar" type="submit">Salvar alterações</button>
         </div>
     </div>
+
+    <h2>Protocolos</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data de retirada</th>
+                <th>Localização</th>
+                <th>N.º do Patrimônio</th>
+                <th>N.º do Chamado</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="protocolosList"></tbody>
+    </table>
     
     <script src="script.js"></script>
 </body>

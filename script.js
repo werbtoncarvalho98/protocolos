@@ -45,15 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     protocolosList.innerHTML = '';
 
                     data.forEach(protocolo => {
-                        const protocoloItem = document.createElement('div');
+                        const protocoloItem = document.createElement('tr');
                         protocoloItem.innerHTML = `
-                  <strong>Nome:</strong> ${protocolo.nome}<br>
-                  <strong>Data:</strong> ${protocolo.data}<br>
-                  <strong>Localização:</strong> ${protocolo.localizacao}<br>
-                  <strong>Número do Patrimônio:</strong> ${protocolo.patrimonio}<br>
-                  <strong>Número do Chamado:</strong> ${protocolo.chamado}<br>
-                  <button class="editButton" onclick="openEditModal()" data-chamado="${protocolo.chamado}">Editar</button>
-                  <button class="deleteButton" data-chamado="${protocolo.chamado}">Excluir</button>
+                  <td>${protocolo.nome}</td>
+                  <td>${protocolo.data}</td>
+                  <td>${protocolo.localizacao}</td>
+                  <td>${protocolo.patrimonio}</td>
+                  <td>${protocolo.chamado}</td>
+                  <td><button class="editButton" onclick="openEditModal()" data-chamado="${protocolo.chamado}">Editar</button></td>
+                  <td><button class="deleteButton" data-chamado="${protocolo.chamado}">Excluir</button></td>
                 `;
                         protocolosList.appendChild(protocoloItem);
                     });

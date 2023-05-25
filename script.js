@@ -47,23 +47,38 @@ document.addEventListener('DOMContentLoaded', () => {
                     data.forEach(protocolo => {
                         const protocoloItem = document.createElement('tr');
                         protocoloItem.innerHTML = `
-                  <td>${protocolo.nome}</td>
-                  <td>${protocolo.data}</td>
-                  <td>${protocolo.localizacao}</td>
-                  <td>${protocolo.patrimonio}</td>
-                  <td>${protocolo.chamado}</td>
-                  <td><button class="editButton" onclick="openEditModal()" data-chamado="${protocolo.chamado}">Editar</button></td>
-                  <td><button class="deleteButton" data-chamado="${protocolo.chamado}">Excluir</button></td>
-                `;
+                            <td>${protocolo.nome}</td>
+                            <td>${protocolo.data}</td>
+                            <td>${protocolo.localizacao}</td>
+                            <td>${protocolo.patrimonio}</td>
+                            <td>
+                                <a href="http://chamados.ati.to.gov.br/otrs/index.pl?Action=AgentTicketZoom;TicketID=${protocolo.chamado}" target="_blank">00${protocolo.chamado}</a>
+                            </td>
+                            <td>${undefined}</td>
+                            <td>
+                                <div class="menu-container">
+                                    <div class="menu-button" onclick="openMenu(this)">
+                                        <div class="circle"></div>
+                                        <div class="circle"></div>
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="dropdown-menu hidden">
+                                        <button class="edit-btn" onclick="openEditModal()" data-chamado="${protocolo.chamado}">Editar</button>
+                                        <button class="delete-btn" data-chamado="${protocolo.chamado}">Excluir</button>
+                                    </div>
+                                </div>
+                            </td>
+                        `;
+
                         protocolosList.appendChild(protocoloItem);
                     });
 
-                    const editButtons = document.getElementsByClassName('editButton');
+                    const editButtons = document.getElementsByClassName('edit-btn');
                     Array.from(editButtons).forEach(button => {
                         button.addEventListener('click', editProtocolo);
                     });
 
-                    const deleteButtons = document.getElementsByClassName('deleteButton');
+                    const deleteButtons = document.getElementsByClassName('delete-btn');
                     Array.from(deleteButtons).forEach(button => {
                         button.addEventListener('click', deleteProtocolo);
                     });
@@ -174,3 +189,29 @@ function closeEditModal() {
     const editModal = document.getElementById('edit-modal');
     editModal.style.display = 'none';
 }
+
+function openMenu(button) {
+    const menu = button.nextElementSibling;
+    const isOpen = !menu.classList.contains('hidden');
+
+    const allMenus = document.querySelectorAll('.dropdown-menu');
+    allMenus.forEach((menu) => {
+        if (!menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+        }
+    });
+
+    if (!isOpen) {
+        menu.classList.remove('hidden');
+    }
+}
+
+document.addEventListener('click', (event) => {
+    const target = event.target;
+    const menu = document.querySelector('.dropdown-menu');
+    const menuButton = document.querySelector('.menu-button');
+
+    if (!menu.contains(target) && !menuButton.contains(target)) {
+        menu.classList.add('hidden');
+    }
+});

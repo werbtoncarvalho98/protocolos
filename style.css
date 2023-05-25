@@ -193,6 +193,16 @@ input[type="file"]::file-selector-button,
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.edit-btn,
+.delete-btn {
+    width: 100%;
+}
+
+.edit-btn {
+    margin-bottom: 5px;
 }
 
 .edit-btn,

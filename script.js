@@ -208,10 +208,15 @@ function openMenu(button) {
 
 document.addEventListener('click', (event) => {
     const target = event.target;
-    const menu = document.querySelector('.dropdown-menu');
-    const menuButton = document.querySelector('.menu-button');
+    const menu = target.closest('.dropdown-menu');
+    const menuButton = target.closest('.menu-button');
+    const modal = target.closest('.modal')
+    const editModal = target.closest('.edit-modal')
 
-    if (!menu.contains(target) && !menuButton.contains(target)) {
-        menu.classList.add('hidden');
+    const allMenus = document.querySelectorAll('.dropdown-menu');
+    if (!menu && !menuButton && !modal && !editModal) {
+        allMenus.forEach((menu) => {
+            menu.classList.add('hidden');
+        });
     }
 });

@@ -50,7 +50,20 @@ button {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
+    animation: anim .3s forwards;
+}
+
+@keyframes anim {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
 }
 
 .menu {
@@ -144,11 +157,11 @@ input[type="file"]::file-selector-button,
 }
 
 .circle {
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     background-color: #007bff;
     border-radius: 50%;
-    margin: 2px;
+    margin: 1px;
 }
 
 @keyframes slideIn {
@@ -165,8 +178,7 @@ input[type="file"]::file-selector-button,
 
 .dropdown-menu {
     position: absolute;
-    top: -5px;
-    left: -110px;
+    top: 0;
     transform: translateX(100%);
     width: 100px;
     padding: 5px;

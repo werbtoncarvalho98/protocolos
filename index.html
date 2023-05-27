@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>GPR</title>
+    <title>Gerenciamento de Protocolos de Retirada</title>
 <body>
     <div class="main-content">
         <div class="container">
@@ -23,9 +23,9 @@
                         <label class="text" for="localizacao">Localização:</label>
                         <input class="field" type="text" id="localizacao" required>
                         <label class="text" for="patrimonio">N.º do Patrimônio:</label>
-                        <input class="field" type="text" id="patrimonio" required>
+                        <input class="field" type="text" id="patrimonio" maxlength="6" required>
                         <label class="text" for="chamado">N.º do Chamado:</label>
-                        <input class="field" type="text" id="chamado" required>
+                        <input class="field" type="text" id="chamado" maxlength="5" required>
                         <label class="text" for="comprovante">Comprovante:</label>
                         <input type="file" id="comprovante" disabled>
                     </form>
@@ -47,7 +47,7 @@
                             <label class="text" for="editLocalizacao">Localização:</label>
                             <input class="field" type="text" id="editLocalizacao" required>
                             <label class="text" for="editPatrimonio">N.º do Patrimônio:</label>
-                            <input class="field" type="text" id="editPatrimonio" required>
+                            <input class="field" type="text" id="editPatrimonio" maxlength="6" required>
                             <label class="text" for="chamado">N.º do Chamado:</label>
                             <input class="field" type="text" id="chamado" required disabled>
                             <label class="text" for="comprovante">Comprovante:</label>

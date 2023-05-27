@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const protocoloForm = document.getElementById('protocoloForm');
+    const protocoloForm = document.querySelector('#protocoloForm');
 
     protocoloForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const nome = document.getElementById('nome').value;
-        const data = document.getElementById('data').value;
-        const localizacao = document.getElementById('localizacao').value;
-        const patrimonio = document.getElementById('patrimonio').value;
-        const chamado = document.getElementById('chamado').value;
+        const nome = document.querySelector('#nome').value;
+        const data = document.querySelector('#data').value;
+        const localizacao = document.querySelector('#localizacao').value;
+        const patrimonio = document.querySelector('#patrimonio').value;
+        const chamado = document.querySelector('#chamado').value;
 
         const protocolo = { nome, data, localizacao, patrimonio, chamado };
 
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.error) {
                     alert(data.error);
                 } else {
-                    const protocolosList = document.getElementById('protocolosList');
+                    const protocolosList = document.querySelector('#protocolosList');
                     protocolosList.innerHTML = '';
 
                     data.forEach(protocolo => {
@@ -73,12 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         protocolosList.appendChild(protocoloItem);
                     });
 
-                    const editButtons = document.getElementsByClassName('edit-btn');
+                    const editButtons = document.querySelectorAll('.edit-btn');
                     Array.from(editButtons).forEach(button => {
                         button.addEventListener('click', editProtocolo);
                     });
 
-                    const deleteButtons = document.getElementsByClassName('delete-btn');
+                    const deleteButtons = document.querySelectorAll('.delete-btn');
                     Array.from(deleteButtons).forEach(button => {
                         button.addEventListener('click', deleteProtocolo);
                     });
@@ -171,22 +171,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function openModal() {
-    const modal = document.getElementById('modal');
+    const modal = document.querySelector('#modal');
     modal.style.display = 'block';
 }
 
 function closeModal() {
-    const modal = document.getElementById('modal');
+    const modal = document.querySelector('#modal');
     modal.style.display = 'none';
 }
 
 function openEditModal() {
-    const editModal = document.getElementById('edit-modal');
+    const editModal = document.querySelector('#edit-modal');
     editModal.style.display = 'block';
 }
 
 function closeEditModal() {
-    const editModal = document.getElementById('edit-modal');
+    const editModal = document.querySelector('#edit-modal');
     editModal.style.display = 'none';
 }
 

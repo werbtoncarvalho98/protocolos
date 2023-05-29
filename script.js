@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     editPatrimonio.value = data.patrimonio;
                     editChamado.value = data.chamado;
 
-                    editFormContainer.style.display = 'block';
+                    editForm.style.display = 'block';
                 }
             })
             .catch(error => {
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert(data.error);
                 } else {
                     alert(data.message);
-                    editFormContainer.style.display = 'none';
+                    editForm.style.display = 'none';
                     closeEditModal();
                     loadProtocolos();
                 }

@@ -50,8 +50,17 @@ button {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
     animation: anim .3s forwards;
+}
+
+.modal-content>strong,
+.edit-modal-content>strong {
+    line-height: 1;
+}
+
+.protocolo-form,
+.protocolo-edit-form {
+    margin: 10px 0 20px 0;
 }
 
 @keyframes anim {
@@ -83,7 +92,8 @@ button {
 .text {
     position: relative;
     display: block;
-    margin: 5px 0;
+    margin: 0.391rem 0 0.391rem 0;
+    line-height: 1;
 }
 
 .field {
@@ -103,7 +113,7 @@ input[type="file"]::file-selector-button,
 .novo-protocolo-btn,
 .edit-btn,
 .delete-btn {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .table {
@@ -114,8 +124,17 @@ input[type="file"]::file-selector-button,
 }
 
 .table tbody tr {
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 10px;
+}
+
+.table tbody tr td {
+    background-color: #fff;
+}
+
+.table tbody tr td a {
+    text-decoration: none;
+    color: #007bff;
 }
 
 .table tbody tr td:nth-child(1) {
@@ -124,11 +143,6 @@ input[type="file"]::file-selector-button,
 
 .table tbody tr td:nth-last-child(1) {
     border-radius: 10px;
-}
-
-.table tbody tr td a {
-    text-decoration: none;
-    color: #007bff;
 }
 
 .table tbody tr td a:hover {
@@ -203,7 +217,7 @@ input[type="file"]::file-selector-button,
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .edit-btn,

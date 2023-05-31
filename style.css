@@ -112,7 +112,8 @@ input[type="file"]::file-selector-button,
 .editar,
 .novo-protocolo-btn,
 .edit-btn,
-.delete-btn {
+.delete-btn,
+.table tbody tr {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
@@ -124,7 +125,6 @@ input[type="file"]::file-selector-button,
 }
 
 .table tbody tr {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border-radius: 10px;
 }
 

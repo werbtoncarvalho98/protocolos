@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     data.forEach(protocolo => {
                         const protocoloItem = document.createElement('tr');
-                        protocoloItem.innerHTML = `
+                        protocoloItem.innerHTML = 
+                        `
                             <td>${protocolo.nome}</td>
                             <td>${protocolo.data}</td>
                             <td>${protocolo.localizacao}</td>

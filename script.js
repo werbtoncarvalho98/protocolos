@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     data.forEach(protocolo => {
                         const protocoloItem = document.createElement('tr');
-                        protocoloItem.innerHTML = 
-                        `
+                        protocoloItem.innerHTML =
+                            `
                             <td>${protocolo.nome}</td>
                             <td>${protocolo.data}</td>
                             <td>${protocolo.localizacao}</td>
@@ -117,7 +117,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function deleteProtocolo() {
         const chamado = this.getAttribute('data-chamado');
-        if (confirm(`Deseja excluir o protocolo com o número de chamado ${chamado}?`)) {
+
+        // Teste
+        const modal = document.querySelector('#confirm-modal');
+        modal.style.display = 'block';
+
+        // Teste
+        const confirmDelete = document.querySelector('#confirm-delete');
+        const cancelDelete  = document.querySelector('#cancel-delete');
+
+        confirmDelete.addEventListener('click', () => {
+            
+            //Teste
+            modal.style.display = 'none';
+
             fetch(`/protocolos/${chamado}`, { method: 'DELETE' })
                 .then(response => response.json())
                 .then(data => {
@@ -132,7 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.error('Erro:', error);
                     alert('Erro ao excluir o protocolo');
                 });
-        }
+        });
+
+
+        // Teste
+        cancelDelete.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
     }
 
     editForm.addEventListener('submit', (e) => {
@@ -189,6 +208,10 @@ function openEditModal() {
 function closeEditModal() {
     const editModal = document.querySelector('#edit-modal');
     editModal.style.display = 'none';
+}
+
+function openDeleteModal() {
+    
 }
 
 function openMenu(button) {

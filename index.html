@@ -29,7 +29,7 @@
                         <label class="text" for="comprovante">Comprovante:</label>
                         <input type="file" id="comprovante" disabled>
                     </form>
-                    <button form="protocoloForm" class="adicionar" type="submit">Criar Protocolo</button>
+                    <button form="protocoloForm" class="action-btn" type="submit">Criar Protocolo</button>
                 </div>
             </div>
             <div id="edit-modal" class="edit-modal">
@@ -51,13 +51,25 @@
                         <input type="file" id="comprovante" disabled>
                         <input type="hidden" id="editChamado">
                     </form>
-                    <button form="editForm" class="adicionar" type="submit">Salvar alterações</button>
+                    <button form="editForm" class="action-btn" type="submit">Salvar alterações</button>
+                </div>
+            </div>
+            <div id="confirm-modal" class="modal">
+                <div class="modal-content">
+                    <p>Deseja excluir o protocolo com o número de chamado
+                        <span id="chamado-span"></span>
+                        ?
+                    </p>
+                    <div class="btn-container">
+                        <button onclick="deleteProtocolo()" id="confirm-delete" class="action-btn">Excluir</button>
+                        <button onclick="closeModal()" id="cancel-delete" class="action-btn">Cancelar</button>
+                    </div>
                 </div>
             </div>
             <div class="menu">
                 <h2>Protocolos</h2>
                 <div>
-                    <input type="search" name="search" class="search" placeholder="Pesquisar..." disabled> 
+                    <input type="search" name="search" class="search" placeholder="Pesquisar..." disabled>
                     <button class="novo-protocolo-btn" onclick="openModal()">Novo Protocolo</button>
                 </div>
             </div>

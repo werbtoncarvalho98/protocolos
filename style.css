@@ -211,7 +211,7 @@ input[type="file"]::file-selector-button,
 .novo-protocolo-btn,
 .edit-btn,
 .delete-btn {
-    padding: 5px 10px;
+    padding: 5px 15px;
     border: none;
     border-radius: 5px;
     background-color: rgb(0, 123, 255);
@@ -311,8 +311,11 @@ input[type="search"] {
 }
 
 .table tbody tr,
-.field,
-.dropdown-menu,
-input[type="search"] {
+.dropdown-menu {
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+input[type="search"],
+.field {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px inset;
 }

@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 body {
     box-sizing: border-box;
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 input,
@@ -42,7 +42,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #f9f9f9;
     margin: 0 auto;
     padding: 30px;
     border-radius: 10px;
@@ -76,12 +76,12 @@ button {
 }
 
 @keyframes anim {
-    from {
+    0% {
         transform: translate(-50%, -50%) scale(0);
         opacity: 0;
     }
 
-    to {
+    100% {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
     }
@@ -109,21 +109,11 @@ button {
 }
 
 .field {
-    background-color: #F0F9FE;
+    background-color: #fff;
     width: -webkit-fill-available;
     padding: 5px 10px;
     border: unset;
     border-radius: 5px;
-}
-
-input[type=text]:focus,
-input[type=date]:focus {
-    outline: 2px solid #0069d9;
-}
-
-.dropdown-menu,
-.table tbody tr {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .table {
@@ -143,7 +133,7 @@ input[type=date]:focus {
 
 .table tbody tr td a {
     text-decoration: none;
-    color: #007bff;
+    color: rgb(0, 123, 255);
 }
 
 .table tbody tr td:nth-child(1) {
@@ -172,18 +162,19 @@ input[type=date]:focus {
 }
 
 .menu-button {
+    display: flex;
+    flex-direction: column;
     padding: 2px;
     border-radius: 50px;
-    display: flex;
     cursor: pointer;
     width: fit-content;
 }
 
 .circle {
-    width: 5px;
-    height: 5px;
-    background-color: #007bff;
-    border-radius: 50%;
+    width: 20px;
+    height: 3px;
+    background-color: rgb(0, 123, 255);
+    border-radius: 50px;
     margin: 1px;
 }
 
@@ -205,7 +196,7 @@ input[type=date]:focus {
     transform: translateX(100%);
     width: 100px;
     padding: 5px;
-    background-color: #fff;
+    background-color: #f9f9f9;
     border-radius: 5px;
     animation: slideIn 0.3s forwards;
 }
@@ -215,14 +206,15 @@ input[type=date]:focus {
 }
 
 input[type="file"]::file-selector-button,
-.action-btn,
+.adicionar,
+.editar,
 .novo-protocolo-btn,
 .edit-btn,
 .delete-btn {
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: rgb(0, 123, 255);
     color: #fff;
     cursor: pointer;
 }
@@ -245,47 +237,70 @@ input[type="file"]::file-selector-button,
     margin-bottom: 5px;
 }
 
-.btn-container {
-    display: flex;
-    gap: 20px;
-}
-
 input[type="file"]::file-selector-button:hover,
-.action-btn:hover,
+.adicionar:hover,
+.editar:hover,
 .novo-protocolo-btn:hover,
 .edit-btn:hover,
 .delete-btn:hover {
-    background-color: #0069d9;
+    background-color: rgb(0, 108, 224);
 }
 
 .delete-btn {
-    background-color: #dc3545;
+    background-color: rgb(220, 53, 69);
 }
 
 .delete-btn:hover {
-    background-color: #BF2231;
+    background-color: rgb(208, 37, 54);
 }
 
 input[type="search"] {
-    background-color: #F0F9FE;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
 }
 
-.action-btn {
+.adicionar,
+.editar {
     width: 100%;
+}
+
+.close-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-btn {
+    position: relative;
+    background-color: #ddd;
+    width:  20px;
+    height: 20px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: rgb(220, 53, 69);
+}
+
+.left {
+    transform: rotate(45deg);
+}
+
+.right {
+    transform: rotate(-45deg);
 }
 
 .close {
     position: absolute;
-    color: #aaa;
-    line-height: 0;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    top: 20px;
-    right: 10px;
+    background-color: rgb(0, 0, 0);
+    width:  10px;
+    height: 2px;
+    border-radius: 50px;
 }
 
 .close:hover,
@@ -293,4 +308,11 @@ input[type="search"] {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.table tbody tr,
+.field,
+.dropdown-menu,
+input[type="search"] {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
